@@ -1,0 +1,3 @@
+vehicle1 model1 2000 200
+vehicle2 model2 1999 300
+vehicle3 model3 2001 250
