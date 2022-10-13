@@ -1,0 +1,4 @@
+Truck1 model1 2000 200 129
+truck2 m2 2021 152 140
+truckname1 truckmodel1 2016 500 120
+daksd sdsadf 2019 200 130

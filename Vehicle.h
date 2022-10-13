@@ -10,6 +10,7 @@ protected:
 	int capacity;
 public:
 	Vehicle(string name = "", string model = "", int year = 2022, int capacity = 100);
+	Vehicle(Vehicle*& vehicle);
 	int getYear();
 	int getAge();
 	int getCapacity();

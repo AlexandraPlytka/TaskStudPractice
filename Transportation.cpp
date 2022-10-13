@@ -49,9 +49,10 @@ void Transportation::WriteALLInfoAboutTransportationToConsole()
 	Destination destination(destinationFrom, destinationTO);
 	destination.writeToConsole();
 	VehicleList vlist;
-	Vehicle veh = vlist.GetVehicleByItsName(vehicle);
+	//Vehicle veh = vlist.GetVehicleByItsName(vehicle);
 	cout << "Vehicle: ";
-	veh.writeToConsole();
+	//vlist.GetVehicleByItsName(vehicle).writeToConsole();
+	//veh.writeToConsole();
 	cout << endl;
 }
 
@@ -116,7 +117,7 @@ istream& operator>>(istream& in, Transportation& c)
 	if (!vlist.isExist(c.vehicle)) {
 		cout << "\nsuch vehicle do not exist try enter another vehiche name " << endl;
 		cout << "\nWe have this vehicles:" << endl;
-		vlist.WriteToConsole();
+		vlist.WriteAllToConsole();
 		cout << "\n enter name from list" << endl;
 		cin >> c.vehicle;
 	}

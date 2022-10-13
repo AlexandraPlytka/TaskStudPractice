@@ -15,36 +15,44 @@ Vehicle::Vehicle(string name, string model, int year, int capacity)
 
 }
 
+Vehicle::Vehicle(Vehicle*& vehicle)
+{
+	this->model = vehicle->getModel();
+	this->year = vehicle->getYear();
+	this->name = vehicle->getName();
+	this->capacity = vehicle->getCapacity();
+}
+
 
 
 int Vehicle::getYear()
 {
-	return year;
+	return this->year;
 }
 
 int Vehicle::getAge()
 {
-	return 2022 - year;
+	return 2022 - this->year;
 }
 
 int Vehicle::getCapacity()
 {
-	return capacity;
+	return this->capacity;
 }
 
 string Vehicle::getName()
 {
-	return name;
+	return this->name;
 }
 
 string Vehicle::getModel()
 {
-	return model;
+	return this->model;
 }
 
 void Vehicle::writeToConsole()
 {
-	cout << name << " " << model << " " << year << " " << capacity << endl;
+	cout << this->getName() << " " << this->getModel() << " " << this->getYear() << " " << this->getCapacity() << endl;
 }
 
 void Vehicle::operator=(Vehicle c)

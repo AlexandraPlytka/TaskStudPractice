@@ -4,8 +4,8 @@
 class VehicleSerializer {
 
 public:
-	void ReadVehiclesFromFile(Vehicle*& vehicles, int& count);
+	void ReadVehiclesFromFile(Vehicle**& vehicles, int& count);
 
-	void WriteVehiclesToFile(Vehicle* vehicles, int count);
+	void WriteVehiclesToFile(Vehicle** vehicles, int count);
 
 };

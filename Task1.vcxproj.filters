@@ -66,6 +66,15 @@
     <ClInclude Include="TruckSerealizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BaseVehicleList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarSerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Destination.cpp">
@@ -117,6 +126,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TruckSerealizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TruckList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseVehicleList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CarSerializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CarList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
