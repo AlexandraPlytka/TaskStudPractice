@@ -1,57 +1,60 @@
-#include "DriverList.h"
+#include "DriverTList.h"
 #include"DriverSerializer.h"
 #include <iostream>
 
-using namespace InheritanceLists;
+using namespace TempletedLists;
 
 DriverList::DriverList()
 {
-	DriverSerializer link;
-	link.ReadDriversFromFile(drivers,current);
-	//DriverSerializer::ReadDriversFromFile(drivers, current);
+	DriverSerializer::ReadDriversFromFile(items, current);
+	
 }
 
 DriverList::~DriverList()
 {
-	DriverSerializer link;
-	link.WriteDriversToFile(drivers, current);
-	delete[] drivers;
+	DriverSerializer::WriteDriversToFile(items, current);
 }
 
 void DriverList::Add(Driver& driver)
 {
-	drivers[current] = driver;
-	current++;
+	List<Driver>::Add(driver);
 }
 
 void DriverList::WriteAllToConsole() const
 {
-	for (int i = 0; i < current; i++) {
-		drivers[i].WriteToConsole();
-	}
+	List<Driver>::WriteAllToConsole();
 }
 
 void DriverList::WriteDriverWithMostExperience() const
 {
-	int max = drivers[0].getExperience();
+	int max = items[0].getExperience();
 	int imax = 0;
 	for (int i = 0; i < current; i++)
 	{
-		if (drivers[i].getExperience() > max)
+		if (items[i].getExperience() > max)
 		{
-			max = drivers[i].getExperience();
+			max = items[i].getExperience();
 			imax = i;
 		}
 
 	}
-	drivers[imax].WriteToConsole();
+	items[imax].WriteToConsole();
+}
+
+bool TempletedLists::DriverList::isExist(Driver& driver)
+{
+	for (int i = 0; i < current; i++) {
+		if (driver.getDriverCode() == items[i].getDriverCode())
+			return true;
+	}
+	return false;
 }
 
 Driver DriverList::GetDriverByCode(string code) {
 	if (isCodeExist(code)) {
 		for (int i = 0; i < current; i++) {
-			if (drivers[i].getDriverCode() == code) {
-				return drivers[i];
+			if (items[i].getDriverCode() == code) {
+				return items[i];
 			}
 		}
 	}
@@ -69,7 +72,7 @@ void DriverList::WriteToConsoleDriverByDriverCode(string code)
 bool DriverList::isCodeExist(string code)
 {
 	for (int i = 0; i < current; i++) {
-		if (code == drivers[i].getDriverCode()) {
+		if (code == items[i].getDriverCode()) {
 			return true;
 		}
 	}
@@ -78,9 +81,6 @@ bool DriverList::isCodeExist(string code)
 
 string DriverList::getLastDriverCode()
 {
-	return drivers[current-1].getDriverCode();
+	return items[current - 1].getDriverCode();
 }
 
-bool DriverList::isExist(Driver& driver) {
-	return isCodeExist(driver.getDriverCode());
-}

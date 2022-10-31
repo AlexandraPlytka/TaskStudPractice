@@ -1,16 +1,15 @@
 #pragma once
-#include "Transportation.h"
+#include"Transportation.h"
+#include"List.h"
 #include"ATranspotationList.h"
 
-namespace InheritanceLists {
-	class TransportationList: public ATransportationList {
-		Transportation* transportations;
-		int current;
+namespace TempletedLists {
+	class TransportationList:private List<Transportation>, public ATransportationList{
 	public:
 		TransportationList();
 		~TransportationList();
 		void Add(Transportation& tr);
-		void WriteAllToConsole()const;
+		void WriteAllToConsole() const;
 		void WriteToConsoleSimplify();
 		void WriteToConsoleALLINFO();
 		void WriteLatesTransportation();

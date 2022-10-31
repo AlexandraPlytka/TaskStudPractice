@@ -6,7 +6,7 @@ class Truck :public Vehicle {
 public:
 	Truck(string name = "", string model = "", int year = 2022, int capacity = 100, int lenght = 0);
 	int getLenght();
-	void writeToConsole();
+	void WriteToConsole();
 	friend ostream& operator<<(ostream& out, const Truck& c);
 	friend istream& operator>>(istream& in, Truck& c);
 };

@@ -1,18 +1,7 @@
 #include "Transportation.h"
 #include "TransportationList.h"
 #include"VehicleList.h"
-
-//Transportation::Transportation(int transportationNum, string driversCode, string from, string to , string vehicleName)
-//{
-//	if (transportationNum < 0)
-//		throw "transportation number cannot be negative";
-//	this->transportationNumber = transportationNum;
-//	//DriverList link;
-//	this->driverCode = driversCode;
-//	VehicleList link2;
-//	this->vehicle = link2.GetVehicleByItsName(vehicleName);
-//	this->destination = Destination(from, to);
-//}
+using namespace InheritanceLists;
 
 
 Transportation::Transportation(int transportationNum, string driversCode, string From, string To, string vehicleName)
@@ -43,16 +32,16 @@ void Transportation::WriteALLInfoAboutTransportationToConsole()
 	cout << "All information about transportation" << endl;
 	cout <<"Number: "<< transportationNumber;
 	cout << "\nDriver: ";
-	DriverList link;
-		link.GetDriverByCode(driverCode).writeToConsole();
+	DriverList dlist;
+	(dlist.GetDriverByCode(driverCode)).WriteToConsole();
 	cout << "Destination: ";
 	Destination destination(destinationFrom, destinationTO);
-	destination.writeToConsole();
+	destination.WriteToConsole();
 	VehicleList vlist;
-	//Vehicle veh = vlist.GetVehicleByItsName(vehicle);
+	Vehicle veh = vlist.GetVehicleByItsName(vehicle);
 	cout << "Vehicle: ";
 	//vlist.GetVehicleByItsName(vehicle).writeToConsole();
-	//veh.writeToConsole();
+	veh.WriteToConsole();
 	cout << endl;
 }
 
@@ -66,6 +55,11 @@ string Transportation::getVehicleName()
 void Transportation::WriteSimplifyToConsole()
 {
 	cout << transportationNumber << " " << driverCode << " " << destinationFrom<< " " << destinationTO<< " " << vehicle << endl;
+}
+
+void Transportation::WriteToConsole()
+{
+	WriteSimplifyToConsole();
 }
 
 string Transportation::getCityFrom()
@@ -114,9 +108,10 @@ istream& operator>>(istream& in, Transportation& c)
 	cout << "Vehicle name: ";
 	in >> c.vehicle;
 	VehicleList vlist;
-	if (!vlist.isExist(c.vehicle)) {
+	if (!(vlist.isExist(c.vehicle) )){
 		cout << "\nsuch vehicle do not exist try enter another vehiche name " << endl;
 		cout << "\nWe have this vehicles:" << endl;
+		VehicleList vlist;
 		vlist.WriteAllToConsole();
 		cout << "\n enter name from list" << endl;
 		cin >> c.vehicle;

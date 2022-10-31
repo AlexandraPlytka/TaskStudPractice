@@ -3,6 +3,6 @@
 
 class DestinationSerializer {
 public:
-	void ReadDestinationsFromFile(Destination*& dest, int& count);
-	void WriteDestinationsToFile(Destination* dest, int count);
+	static void ReadDestinationsFromFile(Destination*& dest, int& count);
+	static void WriteDestinationsToFile(Destination* dest, int count);
 };

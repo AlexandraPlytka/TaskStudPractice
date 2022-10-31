@@ -13,18 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="InheritanceBasedList">
+      <UniqueIdentifier>{c784b204-9eb2-4b7c-8fa3-ba540b508327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InheritanceBasedList\TemplatesBaseList">
+      <UniqueIdentifier>{e3e37b2e-2d00-4139-9218-12742fc98188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TempletesBaseList">
+      <UniqueIdentifier>{efe3be63-86ea-4924-9cba-e0423863d4eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FactoryLists">
+      <UniqueIdentifier>{b496f733-6ff4-4c8c-82ea-a2bb5d53c65e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Destination.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DestinationList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DestinationSerializer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DriverList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DriverSerializer.h">
@@ -36,16 +42,10 @@
     <ClInclude Include="Transportation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TransportationList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TransportationSerializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vehicle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VehicleList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VehicleSerializer.h">
@@ -60,20 +60,77 @@
     <ClInclude Include="Car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TruckList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TruckSerealizer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseVehicleList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CarList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CarSerializer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="DestinationList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseVehicleList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="TruckList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportationList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverList.h">
+      <Filter>InheritanceBasedList</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="CarTList.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="TruckTList.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleTList.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="DestinationTList.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverTList.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="TransportationTList.h">
+      <Filter>InheritanceBasedList\TemplatesBaseList</Filter>
+    </ClInclude>
+    <ClInclude Include="AList.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="AVehicleList.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="AListFactory.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="ACarList.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="ATruckList.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="ADestinationList.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="ADriverList.h">
+      <Filter>Header Files\FactoryLists</Filter>
+    </ClInclude>
+    <ClInclude Include="ATranspotationList.h">
+      <Filter>Header Files\FactoryLists</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +196,24 @@
     </ClCompile>
     <ClCompile Include="CarList.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CarTList.cpp">
+      <Filter>Source Files\TempletesBaseList</Filter>
+    </ClCompile>
+    <ClCompile Include="TruckTList.cpp">
+      <Filter>Source Files\TempletesBaseList</Filter>
+    </ClCompile>
+    <ClCompile Include="VehilceTList.cpp">
+      <Filter>Source Files\TempletesBaseList</Filter>
+    </ClCompile>
+    <ClCompile Include="DestinationTList.cpp">
+      <Filter>Source Files\TempletesBaseList</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverTList.cpp">
+      <Filter>Source Files\TempletesBaseList</Filter>
+    </ClCompile>
+    <ClCompile Include="TransportationTList.cpp">
+      <Filter>Source Files\TempletesBaseList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

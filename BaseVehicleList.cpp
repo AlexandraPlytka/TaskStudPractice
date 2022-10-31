@@ -35,7 +35,7 @@ void BaseVehicleList::WriteAllToConsole() const
 {
 	for (int i = 0; i < current; i++)
 	{
-		basevehicles[i]->writeToConsole();
+		basevehicles[i]->WriteToConsole();
 		cout << endl;
 	}
 }
@@ -58,7 +58,7 @@ void BaseVehicleList::WriteInfoAboutVehicleByITSName(string name)
 			exist = true;
 	}
 	if (exist) {
-		BaseVehicleList ::GetVehicleByItsName(name).writeToConsole();
+		BaseVehicleList ::GetVehicleByItsName(name).WriteToConsole();
 	}
 	else {
 		throw "NO such vehicle found";
@@ -81,5 +81,5 @@ void BaseVehicleList::WriteToConsoleTheOldest()
 		}
 	}
 
-	basevehicles[imax]->writeToConsole();
+	basevehicles[imax]->WriteToConsole();
 }

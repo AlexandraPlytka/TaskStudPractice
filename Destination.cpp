@@ -15,7 +15,7 @@ string Destination::getCityTo()
 	return cityTo;
 }
 
-void Destination::writeToConsole()
+void Destination::WriteToConsole()
 {
 	cout << cityFrom << "->" << cityTo << endl;
 }

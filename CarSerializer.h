@@ -3,7 +3,11 @@
 
 class CarSerializer {
 public:
-	void ReadCarsFromFile(Car**& cars, int& count);
+	static void ReadCarsFromFile(Car**& cars, int& count);
+	static void WriteCarsToFile(Car** cars, int count);
 
-	void WriteCarsToFile(Car** cars, int count);
+	static void ReadCarsFromFile(Car*& cars, int& count);
+	static void WriteCarsToFile(Car* cars, int count);
+
+
 };

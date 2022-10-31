@@ -1,10 +1,10 @@
 #pragma once
-#include"VehicleList.h"
 #include"Trucks.h"
+#include"List.h"
 #include"ATruckList.h"
 
-namespace InheritanceLists {
-	class TruckList : private BaseVehicleList , public ATruckList {
+namespace TempletedLists {
+	class TruckList : private List<Truck>, public ATruckList {
 	public:
 		TruckList();
 		~TruckList();

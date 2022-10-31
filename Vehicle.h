@@ -16,7 +16,7 @@ public:
 	int getCapacity();
 	string getName();
 	string getModel();
-	virtual void writeToConsole();
+	virtual void WriteToConsole();
 	friend ostream& operator << (ostream& out, const Vehicle& c);
 	friend istream& operator >> (istream& in, Vehicle& c);
 	void operator =(Vehicle c);

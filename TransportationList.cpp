@@ -1,16 +1,11 @@
 #include "TransportationList.h"
 #include"TransportationSerializer.h"
 #include "DestinationList.h"
+using namespace InheritanceLists;
 
 TransportationList::TransportationList()
 {
-	TransportationSerializer link;
-	link.ReadtransporationFromFile(transportations, current);
-	//for (int i = 0; i < current; i++) {
-	//	DestinationList dlist;
-	//	Destination des(transportations[i].getCityFrom(), transportations[i].getCityTo());
-	//	dlist.AddDestination(des);
-	//}
+	TransportationSerializer :: ReadtransporationFromFile(transportations, current);
 }
 
 TransportationList::~TransportationList()
@@ -20,9 +15,10 @@ TransportationList::~TransportationList()
 	delete[] transportations;
 }
 
-void TransportationList::AddTransportation(Transportation& tr)
+void TransportationList::Add(Transportation& tr)
 {
 	if(isExist(tr.getTranspNum())){
+		throw "this transportaion (number) already exist ";
 		throw "this transportaion (number) already exist ";
 	}
 	else {
@@ -30,7 +26,7 @@ void TransportationList::AddTransportation(Transportation& tr)
 		current++;
 		DestinationList dlist;
 		Destination des(tr.getCityFrom(), tr.getCityTo());
-		dlist.AddDestination(des);
+		dlist.Add(des);
 	}
 }
 
@@ -62,7 +58,23 @@ bool TransportationList::isExist(int n)
 	return false;
 }
 
+bool TransportationList::isExist(Transportation& transportation)
+{
+	for (int i = 0; i < current; i++) {
+		if (transportations[i].getTranspNum() == transportation.getTranspNum())
+			return true;
+	}
+	return false;
+}
 int TransportationList::getlastTransportationNum()
 {
 	return transportations[current - 1].getTranspNum();
+}
+
+
+void TransportationList :: WriteAllToConsole()const
+{
+	for (int i = 0; i < current; i++) {
+		transportations[i].WriteSimplifyToConsole();
+	}
 }

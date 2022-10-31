@@ -1,25 +1,28 @@
 #pragma once
-#include"DriverList.h"
-#include"DestinationList.h"
-#include"TransportationList.h"
-#include"VehicleList.h"
-#include"CarList.h"
-#include"TruckList.h"
+#include"ACarList.h"
+#include"ATruckList.h"
+#include"AVehicleList.h"
+#include"ADriverList.h"
+#include"ADestinationList.h"
+#include"ATranspotationList.h"
 
 class Menu {
-	DriverList dlist;
-	DestinationList deslist;
-	TransportationList tlist;
-	VehicleList vlist;
-	CarList carlist;
-	TruckList trucklist;
+	ACarList* carlist;
+	ATruckList* trucklist;
+	AVehilceList* vehiclelist;
+	ADriverList* driverlist;
+	ADestinationList* destinationlist;
+	ATransportationList* transportationlist;
+
 	char userInput;
 public:
 	void Show();
+	Menu();
+	~Menu();
 private:
 	void ShowMainTab();
 	void ShowTab();
-	void ShowTransportationReport();
+	//void ShowTransportationReport();  temporary closed 
 	void AddTab();
 	void PrintTab();
 

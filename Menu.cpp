@@ -1,7 +1,28 @@
 #include "Menu.h"
 #include <iostream>
+#include"AListFactory.h"
 using namespace std;
+Menu::Menu() {
+	ListFactoryProvider factoryProvider;
+	AListFactory* listfactory = factoryProvider.GetListFactory();
 
+	carlist = listfactory->GetCarList();
+	trucklist = listfactory->GetTruckList();
+	vehiclelist = listfactory->GetVehicleList();
+	driverlist = listfactory->GetDriverList();
+	destinationlist = listfactory->GetDestinationList();
+	transportationlist = listfactory->GetTransportationList();
+
+}
+Menu::~Menu()
+{
+	delete carlist;
+	delete trucklist;
+	delete vehiclelist;
+	delete driverlist;
+	delete destinationlist;
+	delete transportationlist;
+}
 void Menu::Show()
 {
 	cout << "Logistical company" << endl;
@@ -49,34 +70,34 @@ void Menu::ShowTab()
 	cin >> userInput;
 		if (userInput == '1') {
 			
-			dlist.WriteToConsole();
+			driverlist->WriteAllToConsole();
 			cout << endl;
 			ShowTab();
 		}
 		else if (userInput == '2') {
-			vlist.WriteAllToConsole();
+			vehiclelist->WriteAllToConsole();
 			cout << endl;
 			ShowTab();
 		}
 		else if (userInput == '3') {
-			trucklist.WriteAllToConsole();
+			trucklist->WriteAllToConsole();
 			cout << endl;
 			ShowTab();
 		}
 		else if (userInput == '4') {
-			carlist.WriteAllToConsole();
+			carlist->WriteAllToConsole();
 			cout << endl;
 			ShowTab();
 		}
 		else if (userInput == '5') {
 			//ShowTransportationReport();
 			cout << endl;
-			tlist.WriteToConsoleSimplify();
+			transportationlist->WriteAllToConsole();
 			cout << endl;
 			ShowTab();
 		}
 		else if (userInput == '6') {
-			deslist.WriteToConsole();
+			destinationlist->WriteAllToConsole();
 			cout << endl;
 			ShowTab();
 		}
@@ -134,9 +155,9 @@ void Menu::AddTab()
 		{
 			Driver newdr;
 			cin >> newdr;
-			dlist.AddDriver(newdr);
+			driverlist->Add(newdr);
 			cout << "Info about added driver: " << endl;
-			newdr.writeToConsole();
+			newdr.WriteToConsole();
 		}
 		catch (const char* err)
 		{
@@ -150,13 +171,13 @@ void Menu::AddTab()
 		{
 			Vehicle newVehicle;
 			cin >> newVehicle;
-			if (vlist.isExist(newVehicle.getName())) {
+			if (vehiclelist->isExist(newVehicle.getName())) {
 				cout << "Vehicle with such name already exist" << endl;
 			}
 			else {
-				vlist.AddVehicle(newVehicle);
+				vehiclelist->Add(newVehicle);
 				cout << "Added vehicle info" << endl;
-				newVehicle.writeToConsole();
+				newVehicle.WriteToConsole();
 				cout << endl;
 			}
 		}
@@ -172,13 +193,13 @@ void Menu::AddTab()
 		{
 			Truck newTruck;
 			cin >> newTruck;
-			if (trucklist.isExist(newTruck.getName())) {
+			if (trucklist->isExist(newTruck)) {
 				cout << "Truck with such name already exist" << endl;
 			}
 			else {
-				trucklist.AddTruck(newTruck);
+				trucklist->Add(newTruck);
 				cout << "Added truck info" << endl;
-				newTruck.writeToConsole();
+				newTruck.WriteToConsole();
 				cout << endl;
 			}
 		}
@@ -194,13 +215,13 @@ void Menu::AddTab()
 		{
 			Car newCar;
 			cin >> newCar;
-			if (carlist.isExist(newCar.getName())) {
+			if (carlist->isExist(newCar)) {
 				cout << "Car with such name already exist" << endl;
 			}
 			else {
-				carlist.AddCars(newCar);
+				carlist->Add(newCar);
 				cout << "Added car info" << endl;
-				newCar.writeToConsole();
+				newCar.WriteToConsole();
 				cout << endl;
 			}
 		}
@@ -217,11 +238,11 @@ void Menu::AddTab()
 		{
 			Destination newdes;
 			cin >> newdes;
-			if (deslist.isExist(newdes)) {
+			if (destinationlist->isExist(newdes)) {
 				cout << "Alredy exist" << endl;
 			}
 			else {
-				deslist.AddDestination(newdes);
+				destinationlist->Add(newdes);
 				cout << "Added desination:" << endl;
 				cout << newdes;
 				cout << endl;
@@ -240,7 +261,7 @@ void Menu::AddTab()
 		{
 			Transportation newtr;
 			cin >> newtr;
-			tlist.AddTransportation(newtr);
+			transportationlist->Add(newtr);
 			cout << "Info about added transportation:" << endl;
 			newtr.WriteSimplifyToConsole();
 			cout << endl;
@@ -267,84 +288,74 @@ void Menu::PrintTab()
 {
 	cout << "Choose an option " << endl;
 	cout << "1. Print lates transportation" << endl;
-	cout << "2. Print the oldest vehicle " << endl;
-	cout << "3. Print vehicle with the biggest capacity" << endl;
-	cout << "4. Print longest truck" << endl;
-	cout << "5. Print car that has the most seats" << endl;
-	cout << "6. Print most experienced diver" << endl;
-	cout << "7. Print driver by its code" << endl;
-	cout << "8. Print vehicle by its name" << endl;
+	cout << "2. Print vehicle with the biggest capacity" << endl;
+	cout << "3. Print longest truck" << endl;
+	cout << "4. Print car that has the most seats" << endl;
+	cout << "5. Print most experienced diver" << endl;
+	cout << "6. Print driver by its code" << endl;
+	cout << "7. Print vehicle by its name" << endl;
 	cout << "0. to go back" << endl;
 	cin >> userInput;
 	if (userInput == '1') {
 		cout << endl;
-		tlist.WriteLatesTransportation();
+		transportationlist->WriteLatesTransportation();
 		cout << endl;
 		PrintTab();
 	}
-
 	else if (userInput == '2') {
 		cout << endl;
-		vlist.WriteToConsoleTheOldest();
+		vehiclelist->WriteToConsoleTheBiggestCapacity();
 		cout << endl;
 		PrintTab();
 	}
 	else if (userInput == '3') {
 		cout << endl;
-		vlist.WriteToConsoleTheBiggestCapacity();
+		trucklist->writeLongestTruck();
 		cout << endl;
 		PrintTab();
 	}
 	else if (userInput == '4') {
 		cout << endl;
-		trucklist.writeLongestTruck();
+		carlist->WriteToConsoleMostPassangers();
 		cout << endl;
 		PrintTab();
 	}
 	else if (userInput == '5') {
 		cout << endl;
-		carlist.WriteToConsoleMostPassangers();
-		cout << endl;
-		PrintTab();
-	}
-	else if (userInput == '6') {
-		cout << endl;
-		dlist.WriteDriverWithMostExperience();
+		driverlist->WriteDriverWithMostExperience();
 		cout << endl;
 		PrintTab();
 	}
 	
-	else if (userInput == '7') {
+	else if (userInput == '6') {
 		cout << endl;
 		cout << "enter driver's code " << endl;
 		string code;
 		cin >> code;
 		try
 		{
-			dlist.WriteToConsoleDriverByDriverCode(code);
+			driverlist->WriteToConsoleDriverByDriverCode(code);
 		}
 		catch (const char* error)
 		{
 			cout << error << endl;
 		}
-		
 		cout << endl;
 		PrintTab();
 	}
-	else if (userInput == '8') {
+	else if (userInput == '7') {
 		cout << endl;
 		cout << "enter vehicle name" << endl;
 		string name;
 		cin >> name;
 		try
 		{
-			vlist.WriteInfoAboutVehicleByITSName(name);
+			vehiclelist->WriteInfoAboutVehicleByITSName(name);
 		}
 		catch (const char* error)
 		{
 			cout << error << endl;
 		}
-		
 		cout << endl;
 		PrintTab();
 	}

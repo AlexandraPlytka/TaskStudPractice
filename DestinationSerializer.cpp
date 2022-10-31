@@ -29,3 +29,4 @@ void DestinationSerializer::WriteDestinationsToFile(Destination* dest, int count
 	fout.close();
 
 }
+

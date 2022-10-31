@@ -1,5 +1,7 @@
 #include "TruckList.h"
 #include"TruckSerealizer.h"
+#include "TruckTList.h"
+using namespace InheritanceLists;
 
 TruckList::TruckList()
 {
@@ -16,12 +18,13 @@ TruckList::~TruckList()
 	link.WriteTrucksToFile((Truck**)basevehicles, current);
 }
 
-void TruckList::AddTruck(Truck& truck)
+void TruckList::Add(Truck& truck)
 {
 	BaseVehicleList::Add(new Truck(truck));
 }
 
-void TruckList::writeLongestTruck()
+
+void TruckList::writeLongestTruck() const
 {
 	int max = ((Truck**)basevehicles)[0]->getLenght();
 	int imax = 0;
@@ -34,6 +37,20 @@ void TruckList::writeLongestTruck()
 			imax = i;
 		}
 	}
-	basevehicles[imax]->writeToConsole();
+	basevehicles[imax]->WriteToConsole();
 }
 
+bool TruckList::isExist(Truck& truck) {
+	for (int i = 0; i < current; i++) {
+		if (truck.getName() == ((Truck**)basevehicles)[i]->getName()) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void TruckList::WriteAllToConsole()const {
+	for (int i = 0; i < current; i++) {
+		((Truck**)basevehicles)[i]->WriteToConsole();
+	}
+}

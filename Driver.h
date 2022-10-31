@@ -13,7 +13,7 @@ public:
 	string getName();
 	string getLastName();
 	int getExperience();
-	void writeToConsole();
+	void WriteToConsole();
 	friend ostream& operator << (ostream& out, const Driver& c);
 	friend istream& operator >> (istream& in, Driver& c);
 };

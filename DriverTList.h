@@ -1,15 +1,14 @@
 #pragma once
 #include "Driver.h"
+#include"List.h"
 #include"ADriverList.h"
-namespace InheritanceLists {
-	class DriverList : public ADriverList {
-		Driver* drivers;
-		int current;
+namespace TempletedLists {
+	class DriverList : private List<Driver> ,public ADriverList {
 	public:
 		DriverList();
 		~DriverList();
 		void Add(Driver& driver);
-		void WriteAllToConsole()const;
+		void WriteAllToConsole() const;
 		void WriteDriverWithMostExperience() const;
 		Driver GetDriverByCode(string code);
 		void WriteToConsoleDriverByDriverCode(string code);

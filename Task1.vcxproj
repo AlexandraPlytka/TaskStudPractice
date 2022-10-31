@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -139,49 +139,70 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AListFactory.h" />
+    <ClInclude Include="ACarList.h" />
+    <ClInclude Include="ADestinationList.h" />
+    <ClInclude Include="ADriverList.h" />
+    <ClInclude Include="AList.h" />
+    <ClInclude Include="ATranspotationList.h" />
+    <ClInclude Include="ATruckList.h" />
+    <ClInclude Include="AVehicleList.h" />
     <ClInclude Include="BaseVehicleList.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarList.h" />
     <ClInclude Include="CarSerializer.h" />
+    <ClInclude Include="CarTList.h" />
     <ClInclude Include="Destination.h" />
     <ClInclude Include="DestinationList.h" />
     <ClInclude Include="DestinationSerializer.h" />
+    <ClInclude Include="DestinationTList.h" />
     <ClInclude Include="Driver.h" />
     <ClInclude Include="DriverList.h" />
     <ClInclude Include="DriverSerializer.h" />
+    <ClInclude Include="DriverTList.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="Transportation.h" />
     <ClInclude Include="TransportationList.h" />
     <ClInclude Include="TransportationSerializer.h" />
+    <ClInclude Include="TransportationTList.h" />
     <ClInclude Include="TruckList.h" />
     <ClInclude Include="Trucks.h" />
     <ClInclude Include="TruckSerealizer.h" />
+    <ClInclude Include="TruckTList.h" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="VehicleList.h" />
     <ClInclude Include="VehicleSerializer.h" />
+    <ClInclude Include="VehicleTList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseVehicleList.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CarList.cpp" />
     <ClCompile Include="CarSerializer.cpp" />
+    <ClCompile Include="CarTList.cpp" />
     <ClCompile Include="Destination.cpp" />
     <ClCompile Include="DestinationList.cpp" />
     <ClCompile Include="DestinationSerializer.cpp" />
+    <ClCompile Include="DestinationTList.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="DriverList.cpp" />
     <ClCompile Include="DriverSerializer.cpp" />
+    <ClCompile Include="DriverTList.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Transportation.cpp" />
     <ClCompile Include="TransportationList.cpp" />
     <ClCompile Include="TransportationSerializer.cpp" />
+    <ClCompile Include="TransportationTList.cpp" />
     <ClCompile Include="TruckList.cpp" />
     <ClCompile Include="Trucks.cpp" />
     <ClCompile Include="TruckSerealizer.cpp" />
+    <ClCompile Include="TruckTList.cpp" />
     <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="VehicleList.cpp" />
     <ClCompile Include="VehicleSerializer.cpp" />
+    <ClCompile Include="VehilceTList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="cars.txt" />

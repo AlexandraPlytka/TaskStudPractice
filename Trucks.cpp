@@ -11,7 +11,7 @@ int Truck::getLenght()
 	return lenght;
 }
 
-void Truck::writeToConsole()
+void Truck::WriteToConsole()
 {
 	cout <<"Truck " << name << " " << model << " " << year << " " << capacity << " " << lenght << endl;
 }

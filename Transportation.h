@@ -18,6 +18,7 @@ public:
 	string getDriversCode();
 	string getVehicleName();
 	void WriteSimplifyToConsole();
+	void WriteToConsole();
 	string getCityFrom();
 	string getCityTo();
 	friend ostream& operator << (ostream& out, const Transportation& c);

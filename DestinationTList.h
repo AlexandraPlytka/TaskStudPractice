@@ -1,16 +1,17 @@
 #pragma once
 #include"Destination.h"
+#include"List.h"
 #include"ADestinationList.h"
 
-namespace InheritanceLists {
-	class DestinationList : public ADestinationList {
-		Destination* destinations;
-		int current;
+namespace TempletedLists {
+
+	class DestinationList : private List<Destination>,public ADestinationList {
+	
 	public:
 		DestinationList();
 		~DestinationList();
 		void Add(Destination& des);
-		void WriteAllToConsole()const;
+		void WriteAllToConsole() const;
 		bool isExist(Destination& des);
 	};
 }

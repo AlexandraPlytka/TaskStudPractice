@@ -4,7 +4,7 @@
 Car::Car(string name, string model, int year, int capacity, int cpass)
 	: Vehicle(name, model, year, capacity), capacityPassangers(cpass){
 }
-void Car::writeToConsole()
+void Car::WriteToConsole()
 {
 	cout << "Car " << name << " " << model << " " << year << " " << capacity << " " << capacityPassangers << endl;
 }

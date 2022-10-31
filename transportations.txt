@@ -2,4 +2,3 @@
 2 006 city2 city3 vehicle2
 3 002 IF Kyiv car2
 4 003 Kyiv Uzhorod car
-6 009 mon fri car2

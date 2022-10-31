@@ -1,6 +1,7 @@
 #include"CarList.h"
 #include"CarSerializer.h"
 
+using namespace InheritanceLists;
 CarList::CarList()
 {
 	Car** cars;
@@ -15,12 +16,12 @@ CarList::~CarList()
 	link.WriteCarsToFile((Car**)basevehicles, current);
 }
 
-void CarList::AddCars(Car& car)
+void CarList::Add(Car& car)
 {
 	BaseVehicleList::Add(new Car(car));
 }
 
-void CarList::WriteToConsoleMostPassangers()
+void CarList::WriteToConsoleMostPassangers() const
 {
 	int max = ((Car**)basevehicles)[0]->getPassangers();
 	int imax = 0;
@@ -33,5 +34,18 @@ void CarList::WriteToConsoleMostPassangers()
 			imax = i;
 		}
 	}
-	basevehicles[imax]->writeToConsole();
+	basevehicles[imax]->WriteToConsole();
+}
+
+void CarList::WriteAllToConsole()const {
+	for (int i = 0; i < current; i++) {
+		((Car**)basevehicles)[i]->WriteToConsole();
+	}
+}
+bool CarList::isExist(Car& car) {
+	for (int i = 0; i < current; i++) {
+		if (((Car**)basevehicles)[i]->getName() == car.getName())
+			return true;
+	}
+	return false;
 }

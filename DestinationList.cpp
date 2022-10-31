@@ -1,5 +1,8 @@
 #include "DestinationList.h"
 #include"DestinationSerializer.h"
+
+using namespace InheritanceLists;
+
 DestinationList::DestinationList()
 {
 	DestinationSerializer link;
@@ -13,7 +16,7 @@ DestinationList::~DestinationList()
 	delete[] destinations;
 }
 
-void DestinationList::AddDestination(Destination& des)
+void DestinationList::Add(Destination& des)
 {
 	if (!isExist(des)) {
 		destinations[current] = des;
@@ -22,14 +25,14 @@ void DestinationList::AddDestination(Destination& des)
 }
 
 
-void DestinationList::WriteToConsole()
+void DestinationList::WriteAllToConsole() const
 {
 	for (int i = 0; i < current; i++) {
-		destinations[i].writeToConsole();
+		destinations[i].WriteToConsole();
 	}
 }
 
-bool DestinationList::isExist(Destination des)
+bool DestinationList::isExist(Destination& des)
 {
 	for (int i = 0; i < current; i++) {
 		if (des.getCityFrom() == destinations[i].getCityFrom() && des.getCityTo() == destinations[i].getCityTo())

@@ -2,7 +2,7 @@
 #include"DriverList.h"
 #include <iostream>
 
-
+using namespace InheritanceLists;
 Driver::Driver(string driverCode ,string name, string lastName, int experience)
 {
 	if (experience < 0)
@@ -37,7 +37,7 @@ int Driver::getExperience() {
 	return experience;
 }
 
-void Driver::writeToConsole()
+void Driver::WriteToConsole()
 {
 	cout << driverCode<<" " << name << " " << lastName << " " << experience << endl;
 }

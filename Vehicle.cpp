@@ -50,7 +50,7 @@ string Vehicle::getModel()
 	return this->model;
 }
 
-void Vehicle::writeToConsole()
+void Vehicle::WriteToConsole()
 {
 	cout << this->getName() << " " << this->getModel() << " " << this->getYear() << " " << this->getCapacity() << endl;
 }

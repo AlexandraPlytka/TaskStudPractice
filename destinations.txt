@@ -1,7 +1,4 @@
-city1 city2
-city2 city3
-IF Kyiv
 Kyiv Uzhorod
-Berlin Kyiv
 Chernivtsi Lviv
 Lviv Uzhorod
+smkdf fsdnkdlf

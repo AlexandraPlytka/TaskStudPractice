@@ -10,7 +10,7 @@ public:
 	Destination(string From="", string To= "");
 	string getCityFrom();
 	string getCityTo();
-	void writeToConsole();
+	void WriteToConsole();
 	friend ostream& operator << (ostream& out, const Destination& c);
 	friend istream& operator >> (istream& in, Destination& c);
 	Destination operator+(Destination a);
