@@ -3,7 +3,7 @@
 
 void VehicleSerializer::ReadVehiclesFromFile(Vehicle**& vehicles, int& count)
 {
-	ifstream fin("vehicles.txt");
+	ifstream fin("C:\\Users\\masch\\source\\repos\\TemplesForTask\\vehicles.txt");
 	vehicles = new Vehicle*[100]; count = 0;
 
 	string name, model;
@@ -20,7 +20,7 @@ void VehicleSerializer::ReadVehiclesFromFile(Vehicle**& vehicles, int& count)
 
 void VehicleSerializer::WriteVehiclesToFile(Vehicle** vehicles, int count)
 {
-	ofstream fout("vehicles.txt");
+	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\vehicles.txt");
 
 	for (int i = 0; i < count; i++)
 	{
@@ -36,7 +36,7 @@ void VehicleSerializer::WriteVehiclesToFile(Vehicle** vehicles, int count)
 
 void VehicleSerializer::ReadVehiclesFromFile(Vehicle*& vehicles, int& count)
 {
-	ifstream fin("vehicles.txt");
+	ifstream fin("C:\\Users\\masch\\source\\repos\\TemplesForTask\\vehicles.txt");
 	vehicles = new Vehicle [100]; count = 0;
 
 	string name, model;
@@ -53,7 +53,7 @@ void VehicleSerializer::ReadVehiclesFromFile(Vehicle*& vehicles, int& count)
 
 void VehicleSerializer::WriteVehiclesToFile(Vehicle* vehicles, int count)
 {
-	ofstream fout("vehicles.txt");
+	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\vehicles.txt");
 
 	for (int i = 0; i < count; i++)
 	{

@@ -4,7 +4,7 @@
 
 void DriverSerializer::ReadDriversFromFile(Driver*& drivers, int& count)
 {
-	ifstream fin("drivers.txt");
+	ifstream fin("C:\\Users\\masch\\source\\repos\\TemplesForTask\\drivers.txt");
 	drivers = new Driver[100]; count = 0;
 
 	string driverCode,name, lastName;
@@ -20,7 +20,7 @@ void DriverSerializer::ReadDriversFromFile(Driver*& drivers, int& count)
 
 void DriverSerializer::WriteDriversToFile(Driver* drivers, int count)
 {
-	ofstream fout("drivers.txt");
+	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\drivers.txt");
 
 	for (int i = 0; i < count; i++)
 	{

@@ -16,6 +16,7 @@ VehicleList::~VehicleList()
 void VehicleList::Add(Vehicle& vehicle)
 {
 	List<Vehicle>::Add(vehicle);
+	VehicleSerializer::WriteVehiclesToFile(items, current);
 }
 
 void VehicleList::WriteToConsoleTheBiggestCapacity() const

@@ -17,6 +17,7 @@ void DestinationList::Add(Destination& des)
 	if (!isExist(des)) {
 		List<Destination>::Add(des);
 	}
+	DestinationSerializer::WriteDestinationsToFile(items, current);
 }
 
 

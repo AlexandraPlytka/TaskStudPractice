@@ -7,21 +7,21 @@ using namespace InheritanceLists;
 VehicleList::VehicleList()
 {
 	Vehicle** vehicles;
-	VehicleSerializer link;
-	link.ReadVehiclesFromFile(vehicles, current);
+	VehicleSerializer::ReadVehiclesFromFile(vehicles, current);
 	basevehicles = (Vehicle**)vehicles;
 }
 
 VehicleList::~VehicleList()
 {
-	VehicleSerializer link;
-	link.WriteVehiclesToFile((Vehicle**) basevehicles, current);
+//	VehicleSerializer::WriteVehiclesToFile((Vehicle**) basevehicles, current);
 	//delete[] vehicles;
 }
 
 void VehicleList::Add(Vehicle& vehicle)
 {
 	BaseVehicleList::Add(new Vehicle(vehicle));
+	VehicleSerializer::WriteVehiclesToFile((Vehicle**)basevehicles, current);
+
 }
 
 bool VehicleList::isExist(Vehicle& vehicle)

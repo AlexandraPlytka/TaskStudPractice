@@ -6,21 +6,20 @@ using namespace InheritanceLists;
 TruckList::TruckList()
 {
 	Truck** trucks;
-	TruckSerializer link;
-	link.ReadTrucksFromFile(trucks, current);
+	TruckSerializer ::ReadTrucksFromFile(trucks, current);
 	basevehicles = (Vehicle**)trucks;
 }
 
 
 TruckList::~TruckList()
 {
-	TruckSerializer link;
-	link.WriteTrucksToFile((Truck**)basevehicles, current);
+	TruckSerializer::WriteTrucksToFile((Truck**)basevehicles, current);
 }
 
 void TruckList::Add(Truck& truck)
 {
 	BaseVehicleList::Add(new Truck(truck));
+	TruckSerializer::WriteTrucksToFile((Truck**)basevehicles, current);
 }
 
 

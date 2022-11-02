@@ -4,7 +4,7 @@
 
 void CarSerializer::ReadCarsFromFile(Car**& cars, int& count)
 {
-	ifstream fin("cars.txt");
+	ifstream fin("C:\\Users\\masch\\source\\repos\\TemplesForTask\\cars.txt");
 	cars = new Car * [100]; count = 0;
 
 	string name, model;
@@ -21,7 +21,7 @@ void CarSerializer::ReadCarsFromFile(Car**& cars, int& count)
 
 void CarSerializer::WriteCarsToFile(Car** cars, int count)
 {
-	ofstream fout("cars.txt");
+	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\cars.txt");
 
 	for (int i = 0; i < count; i++)
 	{
@@ -38,7 +38,7 @@ void CarSerializer::WriteCarsToFile(Car** cars, int count)
 
 void CarSerializer::ReadCarsFromFile(Car*& cars, int& count)
 {
-	ifstream fin("cars.txt");
+	ifstream fin("C:\\Users\\masch\\source\\repos\\TemplesForTask\\cars.txt");
 	cars = new Car  [100]; count = 0;
 
 	string name, model;
@@ -55,7 +55,7 @@ void CarSerializer::ReadCarsFromFile(Car*& cars, int& count)
 
 void CarSerializer::WriteCarsToFile(Car* cars, int count)
 {
-	ofstream fout("cars.txt");
+	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\cars.txt");
 
 	for (int i = 0; i < count; i++)
 	{

@@ -17,6 +17,7 @@ TruckList::~TruckList()
 void TruckList::Add(Truck& truck)
 {
 	List<Truck>::Add(truck);
+	TruckSerializer::WriteTrucksToFile(items, current);
 }
 
 

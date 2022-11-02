@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -160,7 +160,6 @@
     <ClInclude Include="DriverList.h" />
     <ClInclude Include="DriverSerializer.h" />
     <ClInclude Include="DriverTList.h" />
-    <ClInclude Include="Menu.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Transportation.h" />
     <ClInclude Include="TransportationList.h" />
@@ -189,8 +188,6 @@
     <ClCompile Include="DriverList.cpp" />
     <ClCompile Include="DriverSerializer.cpp" />
     <ClCompile Include="DriverTList.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Transportation.cpp" />
     <ClCompile Include="TransportationList.cpp" />
     <ClCompile Include="TransportationSerializer.cpp" />

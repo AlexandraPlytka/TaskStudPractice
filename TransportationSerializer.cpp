@@ -2,14 +2,13 @@
 #include<fstream>
 void TransportationSerializer::ReadtransporationFromFile(Transportation*& tr, int& count)
 {
-	ifstream fin("transportations.txt");
+	ifstream fin("C:\\Users\\masch\\source\\repos\\TemplesForTask\\transportations.txt");
 	tr = new Transportation[100]; count = 0;
 	int num;
 	string driverCode, From, To, vname;
 	while (!fin.eof())
 	{
 		fin >> num >> driverCode >> From >> To >> vname;
-		//Destination des(From, To);
 		tr[count++] = Transportation(num,driverCode,From,To,vname);
 	}
 
@@ -18,7 +17,7 @@ void TransportationSerializer::ReadtransporationFromFile(Transportation*& tr, in
 
 void TransportationSerializer::WriteTransportationToFile(Transportation*& tr, int count)
 {
-	ofstream fout("transportations.txt");
+	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\transportations.txt");
 
 	for (int i = 0; i < count; i++)
 	{

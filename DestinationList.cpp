@@ -5,14 +5,12 @@ using namespace InheritanceLists;
 
 DestinationList::DestinationList()
 {
-	DestinationSerializer link;
-	link.ReadDestinationsFromFile(destinations, current);
+	DestinationSerializer::ReadDestinationsFromFile(destinations, current);
 }
 
 DestinationList::~DestinationList()
 {
-	DestinationSerializer link;
-	link.WriteDestinationsToFile(destinations, current);
+	//DestinationSerializer::WriteDestinationsToFile(destinations, current);
 	delete[] destinations;
 }
 
@@ -22,6 +20,7 @@ void DestinationList::Add(Destination& des)
 		destinations[current] = des;
 		current++;
 	}
+	DestinationSerializer::WriteDestinationsToFile(destinations, current);
 }
 
 

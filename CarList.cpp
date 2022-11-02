@@ -5,20 +5,19 @@ using namespace InheritanceLists;
 CarList::CarList()
 {
 	Car** cars;
-	CarSerializer  link;
-	link.ReadCarsFromFile(cars, current);
+	CarSerializer::ReadCarsFromFile(cars, current);
 	basevehicles = (Vehicle**)cars;
 }
 
 CarList::~CarList()
 {
-	CarSerializer link;
-	link.WriteCarsToFile((Car**)basevehicles, current);
+	//CarSerializer::WriteCarsToFile((Car**)basevehicles, current);
 }
 
 void CarList::Add(Car& car)
 {
 	BaseVehicleList::Add(new Car(car));
+	CarSerializer::WriteCarsToFile((Car**)basevehicles, current);
 }
 
 void CarList::WriteToConsoleMostPassangers() const

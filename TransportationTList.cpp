@@ -24,6 +24,7 @@ void TransportationList::Add(Transportation& tr)
 		Destination des(tr.getCityFrom(), tr.getCityTo());
 		dlist.Add(des);
 	}
+	TransportationSerializer::WriteTransportationToFile(items, current);
 }
 
 void TempletedLists::TransportationList::WriteAllToConsole() const

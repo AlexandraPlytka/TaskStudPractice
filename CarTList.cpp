@@ -16,6 +16,7 @@ CarList::~CarList()
 void CarList::Add(Car& car)
 {
 	List<Car>::Add(car);
+	CarSerializer::WriteCarsToFile(items, current);
 }
 
 void CarList::WriteToConsoleMostPassangers() const

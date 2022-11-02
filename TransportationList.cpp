@@ -10,8 +10,7 @@ TransportationList::TransportationList()
 
 TransportationList::~TransportationList()
 {
-	TransportationSerializer link;
-	link.WriteTransportationToFile(transportations, current);
+//	TransportationSerializer ::WriteTransportationToFile(transportations, current);
 	delete[] transportations;
 }
 
@@ -19,7 +18,7 @@ void TransportationList::Add(Transportation& tr)
 {
 	if(isExist(tr.getTranspNum())){
 		throw "this transportaion (number) already exist ";
-		throw "this transportaion (number) already exist ";
+		//throw "this transportaion (number) already exist ";
 	}
 	else {
 		transportations[current] = tr;
@@ -28,6 +27,8 @@ void TransportationList::Add(Transportation& tr)
 		Destination des(tr.getCityFrom(), tr.getCityTo());
 		dlist.Add(des);
 	}
+	TransportationSerializer::WriteTransportationToFile(transportations, current);
+
 }
 
 void TransportationList::WriteToConsoleSimplify()

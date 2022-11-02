@@ -6,15 +6,12 @@ using namespace InheritanceLists;
 
 DriverList::DriverList()
 {
-	DriverSerializer link;
-	link.ReadDriversFromFile(drivers,current);
-	//DriverSerializer::ReadDriversFromFile(drivers, current);
+	DriverSerializer::ReadDriversFromFile(drivers, current);
 }
 
 DriverList::~DriverList()
 {
-	DriverSerializer link;
-	link.WriteDriversToFile(drivers, current);
+	//DriverSerializer::WriteDriversToFile(drivers, current);
 	delete[] drivers;
 }
 
@@ -22,6 +19,7 @@ void DriverList::Add(Driver& driver)
 {
 	drivers[current] = driver;
 	current++;
+	DriverSerializer::WriteDriversToFile(drivers, current);
 }
 
 void DriverList::WriteAllToConsole() const

@@ -18,6 +18,8 @@ DriverList::~DriverList()
 void DriverList::Add(Driver& driver)
 {
 	List<Driver>::Add(driver);
+	DriverSerializer::WriteDriversToFile(items, current);
+	DriverSerializer::WriteDriversToFile(items, current);
 }
 
 void DriverList::WriteAllToConsole() const
