@@ -1,5 +1,7 @@
 #pragma once
 #include "Driver.h"
+using namespace std;
+
 class DriverSerializer {
 public:
 	static void ReadDriversFromFile(Driver*& drivers, int& count);

@@ -25,6 +25,12 @@
     <Filter Include="Header Files\FactoryLists">
       <UniqueIdentifier>{b496f733-6ff4-4c8c-82ea-a2bb5d53c65e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Validators">
+      <UniqueIdentifier>{1f541fa1-8d11-48fc-81ba-ac32530a9289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Validator">
+      <UniqueIdentifier>{93c2177c-a4ab-4270-96ba-2bcb5ed498bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Destination.h">
@@ -129,6 +135,18 @@
     <ClInclude Include="ATranspotationList.h">
       <Filter>Header Files\FactoryLists</Filter>
     </ClInclude>
+    <ClInclude Include="AValidator.h">
+      <Filter>Header Files\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseValidator.h">
+      <Filter>Header Files\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="VehiclesValidate.h">
+      <Filter>Header Files\Validators</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverValidate.h">
+      <Filter>Header Files\Validators</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Destination.cpp">
@@ -205,6 +223,15 @@
     </ClCompile>
     <ClCompile Include="TransportationTList.cpp">
       <Filter>Source Files\TempletesBaseList</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseValidator.cpp">
+      <Filter>Source Files\Validator</Filter>
+    </ClCompile>
+    <ClCompile Include="VehiclesValidate.cpp">
+      <Filter>Source Files\Validator</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverValidate.cpp">
+      <Filter>Source Files\Validator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

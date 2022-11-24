@@ -8,6 +8,7 @@ protected:
 	int year;
 	string name;
 	int capacity;
+	
 public:
 	Vehicle(string name = "", string model = "", int year = 2022, int capacity = 100);
 	Vehicle(Vehicle*& vehicle);
@@ -20,4 +21,5 @@ public:
 	friend ostream& operator << (ostream& out, const Vehicle& c);
 	friend istream& operator >> (istream& in, Vehicle& c);
 	void operator =(Vehicle c);
+	static bool IsValide(string name, int year, string model, int capacity);
 };

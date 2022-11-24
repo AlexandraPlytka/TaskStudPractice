@@ -1,6 +1,7 @@
 #include"Trucks.h"
 #include <iostream>
 
+
 Truck::Truck(string name, string model, int year, int capacity, int lenght)
 : Vehicle(name,model,year,capacity), lenght(lenght){
 	

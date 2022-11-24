@@ -146,7 +146,9 @@
     <ClInclude Include="AList.h" />
     <ClInclude Include="ATranspotationList.h" />
     <ClInclude Include="ATruckList.h" />
+    <ClInclude Include="AValidator.h" />
     <ClInclude Include="AVehicleList.h" />
+    <ClInclude Include="BaseValidator.h" />
     <ClInclude Include="BaseVehicleList.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarList.h" />
@@ -160,6 +162,7 @@
     <ClInclude Include="DriverList.h" />
     <ClInclude Include="DriverSerializer.h" />
     <ClInclude Include="DriverTList.h" />
+    <ClInclude Include="DriverValidate.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Transportation.h" />
     <ClInclude Include="TransportationList.h" />
@@ -173,8 +176,10 @@
     <ClInclude Include="VehicleList.h" />
     <ClInclude Include="VehicleSerializer.h" />
     <ClInclude Include="VehicleTList.h" />
+    <ClInclude Include="VehiclesValidate.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseValidator.cpp" />
     <ClCompile Include="BaseVehicleList.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CarList.cpp" />
@@ -188,6 +193,7 @@
     <ClCompile Include="DriverList.cpp" />
     <ClCompile Include="DriverSerializer.cpp" />
     <ClCompile Include="DriverTList.cpp" />
+    <ClCompile Include="DriverValidate.cpp" />
     <ClCompile Include="Transportation.cpp" />
     <ClCompile Include="TransportationList.cpp" />
     <ClCompile Include="TransportationSerializer.cpp" />
@@ -199,6 +205,7 @@
     <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="VehicleList.cpp" />
     <ClCompile Include="VehicleSerializer.cpp" />
+    <ClCompile Include="VehiclesValidate.cpp" />
     <ClCompile Include="VehilceTList.cpp" />
   </ItemGroup>
   <ItemGroup>

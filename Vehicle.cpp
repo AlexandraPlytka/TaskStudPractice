@@ -1,22 +1,36 @@
 #include "Vehicle.h"
 #include <iostream>
+#include"VehiclesValidate.h"
+
+bool Vehicle::IsValide(string name, int year, string model, int capacity)
+{
+	auto validator = new YearValidator(year);
+	validator->setNext(new NameValidator(name))
+		->setNext(new ModelValidator(model))
+		->setNext(new CapacityValidator(capacity));
+	return validator->Validate();
+}
 
 Vehicle::Vehicle(string name, string model, int year, int capacity)
 {
-	if (year <= 0)
+	/*if (year <= 0)
 		throw "year is 0 or negative";
 	if (capacity < 0)
-		throw "capacity cannot be negative";
-
+		throw "capacity cannot be negative";*/
+	if (!IsValide(name, year, model, capacity)) {
+		throw "error is not valide";
+	}
 	this->name = name;
 	this->model = model;
 	this->year = year;
 	this->capacity = capacity;
-
 }
 
 Vehicle::Vehicle(Vehicle*& vehicle)
 {
+	if (!IsValide(vehicle->getName(), vehicle->getYear(), vehicle->getModel(), vehicle->getCapacity())) {
+		throw "eror";
+	}
 	this->model = vehicle->getModel();
 	this->year = vehicle->getYear();
 	this->name = vehicle->getName();
@@ -73,12 +87,18 @@ istream& operator>>(istream& in, Vehicle& c)
 {
 	cout << "Name: ";
 	in >> c.name;
+	//auto validator = new NameValidator(c.name);
 	cout << "Model: ";
 	in >> c.model;
+	//validator->setNext(new ModelValidator(c.model));
 	cout << "Production year: ";
 	in >> c.year;
+	//validator->setNext(new YearValidator(c.year));
 	cout << "Capacity: ";
 	in >> c.capacity;
+	//validator->setNext(new CapacityValidator(c.capacity));
+	/*if (!validator)
+		throw "error validator in >>";*/
 	return in;
 }
 

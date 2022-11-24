@@ -1,12 +1,17 @@
 #include"Driver.h"
 #include"DriverList.h"
 #include <iostream>
+#include"DriverValidate.h"
 
 using namespace InheritanceLists;
 Driver::Driver(string driverCode ,string name, string lastName, int experience)
 {
-	if (experience < 0)
-		throw "experience cannot be negative";
+	auto validator = new CodeValidate(driverCode);
+	validator->setNext(new NameValidate(name))
+		->setNext(new LastNameValidate(lastName))
+		->setNext(new ExperienceValidate(experience));
+	if (!validator)
+		throw "error";
 	this->driverCode = driverCode;
 	this->name = name;
 	this->lastName = lastName;
@@ -65,5 +70,12 @@ istream& operator>>(istream& in, Driver& c)
 	in >> c.lastName;
 	cout << "Experience: ";
 	in >> c.experience;
+
+	auto validator = new CodeValidate(c.driverCode);
+	validator->setNext(new NameValidate(c.name))
+		->setNext(new LastNameValidate(c.lastName))
+		->setNext(new ExperienceValidate(c.experience));
+	if (!validator)
+		throw "error";
 	return in;
 }

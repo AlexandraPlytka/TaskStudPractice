@@ -12,24 +12,23 @@ void DriverSerializer::ReadDriversFromFile(Driver*& drivers, int& count)
 	while (!fin.eof())
 	{
 		fin >> driverCode>> name >> lastName >> experience;
-		drivers[count++] = Driver(driverCode,name, lastName, experience);
+		drivers[count++]=  Driver(driverCode, name, lastName, experience);
 	}
 
 	fin.close();
 }
-
-void DriverSerializer::WriteDriversToFile(Driver* drivers, int count)
-{
-	ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\drivers.txt");
-
-	for (int i = 0; i < count; i++)
+ void DriverSerializer::WriteDriversToFile(Driver* drivers, int count)
 	{
-		fout << drivers[i].getDriverCode() << " " << drivers[i].getName() << " " << drivers[i].getLastName() << " " << drivers[i].getExperience();
+		ofstream fout("C:\\Users\\masch\\source\\repos\\TemplesForTask\\drivers.txt");
 
-		if (i != count - 1)
-			fout << endl;
+		for (int i = 0; i < count; i++)
+		{
+			fout << drivers[i].getDriverCode() << " " << drivers[i].getName() << " " << drivers[i].getLastName() << " " << drivers[i].getExperience();
+
+			if (i != count - 1)
+				fout << endl;
+		}
+
+		fout.close();
+
 	}
-
-	fout.close();
-
-}
